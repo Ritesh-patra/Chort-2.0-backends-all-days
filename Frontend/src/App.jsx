@@ -7,7 +7,7 @@ const App = () => {
   const [dis, setDis] = useState("");
 
   function fetchNotes() {
-    axios.get("http://localhost:3000/notes").then((res) => {
+    axios.get("https://chort-2-0-backends-all-days.onrender.com/notes").then((res) => {
       setNotes(res.data.notes);
     });
   }
@@ -18,7 +18,7 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:3000/notes", {
+    axios.post("https://chort-2-0-backends-all-days.onrender.com/notes", {
       title,
       dis,
     });
@@ -27,7 +27,7 @@ const App = () => {
   };
 
   const deleteNote = (noteId) => {
-    axios.delete(`http://localhost:3000/notes/${noteId}`).then(() => {
+    axios.delete(`https://chort-2-0-backends-all-days.onrender.com/notes/${noteId}`).then(() => {
       fetchNotes(); // Refresh the notes list after deletion
     });
   };
